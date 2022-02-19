@@ -10,6 +10,9 @@ var strenght = 0;
 var health = 15;
 var agility = 0;
 console.clear();
+alert(
+  "How to play the game and more about it you can find at: https//tomino-ipad.gitbook.io"
+);
 var characterName = prompt("Hello! Type your character name here!");
 if (characterName === "leouiz") {
   goldTokens += 1500;
@@ -42,10 +45,12 @@ if (selectedKit === "archer") {
 }
 if (selectedKit === "knight") {
   inventory.push("Sword");
+  strenght += 12;
   agility += 6;
 }
 if (selectedKit === "magican") {
   inventory.push("Potion book");
+  strenght += 9;
   agility += 9;
 }
 
@@ -94,8 +99,26 @@ if (
             "You tell him the truth and the man laughs softly.  He will invite you inside his house. 'You know king, he's a little explosive if you want, you can stay here for the night, but I won't hide you anymore.'  He will tell you and take you to a small room where you can sleep.  Satisfied, you lie down on the bed."
           );
           var escapethroughtwindow = prompt(
-            "You was sleeping peacefully and suddenly you hear some noises from outside. You slightly get next to doors and listen. “Have you seen a man with brown hair, bow and a green robe somewhere there?” You hear a deep voice saying. “No I’m most of time helping in the field.” The man who help you says. And suddenly it occurs to you. Guards! They are trying to find you! What would you do try to escape by a window(you need agility at least 10), Try to fight or stay hidden? "
+            "You was sleeping peacefully and suddenly you hear some noises from outside. You slightly get next to doors and listen. “Have you seen a man with brown hair, bow and a green robe somewhere there?” You hear a deep voice saying. “No I’m most of time helping in the field.” The man who help you says. And suddenly it occurs to you. Guards! They are trying to find you! What would you do try to escape by a window(you need agility at least 10), Try to fight or stay hidden? (escape / fight / stay hidden)"
           );
+          if (escapethroughtwindow === "fight") {
+            alert(
+              "You’re are thinking what to do for a while and then… You run and attack that man talking. You're fighting like two wolves for piece of meat and then you lost consciousness."
+            );
+          }
+          if (agility > 9 && escapethroughtwindow === "escape") {
+            alert(
+              "Scared, you try to jump from a window thank to your agility you fall with no noises and  run to the forest. When you got here you breathless sit on the moss happy that you got from that place with no one noticing you. "
+            );
+            var blusheyespath = prompt(
+              "You are sitting there and thinking what you can do with your life now. Suddenly you notice two shining blue eyes in the bush. They are watching you. What will you do? Run, go explore or try to kill it? (run / explore / kill)"
+            );
+            if (escapethroughtwindow === "stay hidden") {
+              var helloblocksorwardrobe = prompt(
+                "You scared stay hidden in the room. But then you think: “I think i must hide somewhere!” You look around there is bed, wardrobe and some wheat blocks. (bed / wardrobe / wheat blocks"
+              );
+            }
+          }
         }
       }
     }
